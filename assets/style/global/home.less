@@ -4,9 +4,13 @@
 	position: absolute;
 	display: block;
 	width: 100%;
-	height: 100%;
+
 	top: 60px;
+	right: 0;
+	bottom: 0;
 	left: 0;
+
+	font-size: 0;
 
 	/*padding: 20px;*/
 }
@@ -14,58 +18,6 @@
 
 
 
-
-/*  Frame  */
-
-.frame {
-	position: fixed;
-	display: block;
-
-	background-color: @white;
-
-	z-index: 1;
-}
-
-.frame_top {
-	height: 20px;
-	width: 100%;
-	top: 0;
-	left: 0;
-}
-
-.frame_right {
-	height: 100%;
-	width: 20px;
-	top: 0;
-	right: 0;
-}
-
-.frame_bottom {
-	height: 20px;
-	width: 100%;
-	left: 0;
-	bottom: 0;
-}
-
-.frame_left {
-	height: 100%;
-	width: 20px;
-	top: 0;
-	left: 0;
-}
-
-
-
-/*   Home title  */
-
-#the_title {
-	position: absolute;
-	top: 89px;
-	left: 34px;
-
-	font-size: 15px;
-	letter-spacing: 0em;
-}
 
 
 /*  Sections  */
@@ -83,6 +35,11 @@
 
 
 
+
+
+
+
+/*  ------------  */
 /*  Hero section  */
 
 .hero-section {
@@ -94,11 +51,19 @@
 
 	padding: 40px;
 
+	font-size: 0;
+
+	background-color: #c5dbf2;/*
 	background-image: url("/assets/img/gradient.jpg");
-	background-size: 100%;
+	background-size: auto 100%;
 	background-position: center;
-	background-repeat: repeat-x;
+	background-repeat: repeat-x;*/
 }
+
+
+
+
+/*   Home title  */
 
 .hero-title-wrap {
 	position: absolute;
@@ -121,13 +86,150 @@
 
 }
 
-.augusto-logo {
+#the_title {
+	position: absolute;
+	top: 89px;
+	left: 34px;
+
+	font-size: 15px;
+	letter-spacing: 0em;
+}
+
+.title-price {
+	display: inline-block;
+
+}
+
+
+
+
+/*  Hero Image  */
+
+.hero-img {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 40%;
+	width: 60%;
+	height: 100%;
+
+	background-image: url('/assets/img/augusto-bottle.png');
+	background-position: left;
+	background-size: cover;
+}
+
+
+
+
+
+
+
+/*  -------------  */
+/*  About section  */
+
+.about-section {
+	position: relative;
+	display: block;
+	height: auto;
+	width: 100%;
+	min-height: 500px;
+
+	padding: 40px;
+
+	font-size: 0;
+
+}
+
+.about-wrap {
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+.about-img-wrap {
 	position: relative;
 	display: inline-block;
-	width: 100px;
+	height: 500px;
+	width: 50%;
 
-	margin-bottom: 30px;
+	padding-right: 50px;
+
+	float:left;
+	pointer-events: none;
 }
+
+.about-img {
+	position: relative;
+	display: block;
+	width: 90%;
+	padding-bottom: 90%;
+}
+
+.bottle {
+	position: absolute;
+	overflow: hidden;
+	height: 60%;
+	width: 100%;
+	top: -10%;
+	left: 0;
+}
+
+.bottle-1 {
+	transform:rotate(45deg);
+	transform-origin: 50% 100%;
+}
+
+.bottle-2 {
+	transform:rotate(-135deg);
+	transform-origin: 50% 100%;
+}
+
+.bottle-3 {
+	transform:rotate(-45deg);
+	transform-origin: 50% 100%;
+}
+
+.bottle-4 {
+	transform:rotate(135deg);
+	transform-origin: 50% 100%;
+}
+
+.bottle-top {
+	position: relative;
+	display: block;
+	height: 200%;
+
+	margin: 0 auto;
+}
+
+.bottle-bottom {
+	position: relative;
+	display: block;
+	height: 200%;
+
+	margin: 0 auto;
+
+	transform:rotate(180deg);
+}
+
+.about-content {
+	position: relative;
+	display: inline-block;
+	height: 500px;
+	width: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*  Follow sections*/
@@ -156,29 +258,5 @@
 
 	background-color: red;
 }
-
-
-
-
-/*  Hero Image  */
-
-.hero-img {
-	position: absolute;
-	display: block;
-	top: 0;
-	left: 40%;
-	width: 60%;
-	height: 100%;
-
-	background-image: url('/assets/img/augusto-bottle.png');
-	background-position: left;
-	background-size: cover;
-}
-
-
-
-
-
-
 
 

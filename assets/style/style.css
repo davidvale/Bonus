@@ -212,7 +212,7 @@ select {
   font-size: 31px;
   font-style: normal;
   font-weight: normal;
-  line-height: 25px;
+  line-height: 1em;
   letter-spacing: -2px;
   opacity: 0.5;
   margin-bottom: 20px;
@@ -234,7 +234,7 @@ select {
   font-size: 31px;
   font-style: normal;
   font-weight: normal;
-  line-height: 35px;
+  line-height: 1.2em;
   letter-spacing: -1px;
   margin-bottom: 20px;
 }
@@ -244,7 +244,7 @@ select {
   font-size: 16px;
   font-style: normal;
   font-weight: normal;
-  line-height: 28px;
+  line-height: 1.8em;
   letter-spacing: 0.007em;
   margin-bottom: 20px;
 }
@@ -257,7 +257,6 @@ a {
   position: relative;
   display: inline-block;
   padding: 20px 40px;
-  margin-top: 30px;
   font-family: "GR-Light";
   font-size: 16px;
   text-transform: uppercase;
@@ -268,7 +267,6 @@ a {
   position: relative;
   display: inline-block;
   padding: 15px 25px;
-  margin-top: 30px;
   font-family: "GR-Light";
   font-size: 14px;
   text-transform: uppercase;
@@ -278,7 +276,7 @@ a {
 .button_fill {
   position: relative;
   color: #fff;
-  background-color: #0483d9;
+  background-color: #000;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
@@ -348,6 +346,7 @@ a {
 }
 
 .text-link {
+  position: relative;
   font-family: 'GR-Book',sans-serif;
   font-size: 16px;
   font-style: normal;
@@ -355,6 +354,95 @@ a {
   line-height: 25px;
   letter-spacing: 0.007em;
   color: #000;
+}
+
+.text-link:after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  height: 5px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: #0483d9;
+  opacity: .4;
+  z-index: -1;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.text-link:hover:after {
+  opacity: .7;
+}
+
+.frame {
+  position: fixed;
+  display: block;
+  background-color: #fff;
+  z-index: 1;
+}
+
+.frame_top {
+  height: 20px;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.frame_right {
+  height: 100%;
+  width: 20px;
+  top: 0;
+  right: 0;
+}
+
+.frame_bottom {
+  height: 20px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+.frame_left {
+  height: 100%;
+  width: 20px;
+  top: 0;
+  left: 0;
+}
+
+.table {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+.cell {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width:450px) {
+  .h1 {
+    font-size: 60px;
+  }
+
+  .h2 {
+    font-size: 40px;
+  }
+
+  .h3 {
+    font-size: 25px;
+  }
+
+  .h4 {
+    font-size: 25px;
+  }
+
+  .p1 {
+    font-size: 21px;
+  }
 }
 
 @font-face {
@@ -725,10 +813,11 @@ a {
 .bonus-logo {
   position: relative;
   display: inline-block;
-  width: 70px;
-  height: 40px;
+  width: 60px;
+  height: 30px;
+  margin-top: 6px;
   color: transparent;
-  background-image: url("/assets/img/bonus-logo.svg");
+  background-image: url("/assets/img/bonus_nb.svg");
   -webkit-background-size: 100%;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -760,52 +849,11 @@ a {
   position: absolute;
   display: block;
   width: 100%;
-  height: 100%;
   top: 60px;
-  left: 0;
-}
-
-.frame {
-  position: fixed;
-  display: block;
-  background-color: #fff;
-  z-index: 1;
-}
-
-.frame_top {
-  height: 20px;
-  width: 100%;
-  top: 0;
-  left: 0;
-}
-
-.frame_right {
-  height: 100%;
-  width: 20px;
-  top: 0;
   right: 0;
-}
-
-.frame_bottom {
-  height: 20px;
-  width: 100%;
-  left: 0;
   bottom: 0;
-}
-
-.frame_left {
-  height: 100%;
-  width: 20px;
-  top: 0;
   left: 0;
-}
-
-#the_title {
-  position: absolute;
-  top: 89px;
-  left: 34px;
-  font-size: 15px;
-  letter-spacing: 0em;
+  font-size: 0;
 }
 
 .section {
@@ -824,11 +872,8 @@ a {
   width: 100%;
   min-height: 500px;
   padding: 40px;
-  background-image: url("/assets/img/gradient.jpg");
-  -webkit-background-size: 100%;
-  background-size: 100%;
-  background-position: center;
-  background-repeat: repeat-x;
+  font-size: 0;
+  background-color: #c5dbf2;
 }
 
 .hero-title-wrap {
@@ -850,11 +895,130 @@ a {
   padding: 40px;
 }
 
-.augusto-logo {
+#the_title {
+  position: absolute;
+  top: 89px;
+  left: 34px;
+  font-size: 15px;
+  letter-spacing: 0em;
+}
+
+.title-price {
+  display: inline-block;
+}
+
+.hero-img {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 40%;
+  width: 60%;
+  height: 100%;
+  background-image: url('/assets/img/augusto-bottle.png');
+  background-position: left;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.about-section {
+  position: relative;
+  display: block;
+  height: auto;
+  width: 100%;
+  min-height: 500px;
+  padding: 40px;
+  font-size: 0;
+}
+
+.about-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-img-wrap {
   position: relative;
   display: inline-block;
-  width: 100px;
-  margin-bottom: 30px;
+  height: 500px;
+  width: 50%;
+  padding-right: 50px;
+  float: left;
+  pointer-events: none;
+}
+
+.about-img {
+  position: relative;
+  display: block;
+  width: 90%;
+  padding-bottom: 90%;
+}
+
+.bottle {
+  position: absolute;
+  overflow: hidden;
+  height: 60%;
+  width: 100%;
+  top: -10%;
+  left: 0;
+}
+
+.bottle-1 {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+}
+
+.bottle-2 {
+  -webkit-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+  -webkit-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+}
+
+.bottle-3 {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+}
+
+.bottle-4 {
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -webkit-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+}
+
+.bottle-top {
+  position: relative;
+  display: block;
+  height: 200%;
+  margin: 0 auto;
+}
+
+.bottle-bottom {
+  position: relative;
+  display: block;
+  height: 200%;
+  margin: 0 auto;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.about-content {
+  position: relative;
+  display: inline-block;
+  height: 500px;
+  width: 50%;
 }
 
 .follow-section {
@@ -876,17 +1040,4 @@ a {
   width: 50px;
   color: transparent;
   background-color: red;
-}
-
-.hero-img {
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 40%;
-  width: 60%;
-  height: 100%;
-  background-image: url('/assets/img/augusto-bottle.png');
-  background-position: left;
-  -webkit-background-size: cover;
-  background-size: cover;
 }
